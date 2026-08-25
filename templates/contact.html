@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Old Car Price Prediction</title>
+    <!-- Add your CSS file or styles here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+             /* Navbar container */
+  body .navbar {
+    background-color: #121212;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Use a pixel-style font */
+  .navbar, .navbar-nav .nav-link {
+    font-family: 'Press Start 2P', cursive; /* Pixel font */
+  }
+  .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-item .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff; /* Set your dropdown background color */
+  border: 1px solid #ccc; /* Optional border */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  z-index: 1000;
+}
+
+.navbar .nav-item .dropdown-toggle {
+  cursor: pointer;
+}
+
+
+  /* Navbar links styling */
+  .navbar-nav .nav-link {
+    font-size: 0.8  rem;
+    color: #fff;
+    padding: 1rem 2rem; /* More space between sections */
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .navbar-nav .nav-item {
+  margin-left: 15px; /* Reduce the space between items */
+}
+.navbar-nav .nav-link {
+  padding: 0.8rem 1.5rem; /* Adjust the clickable size of links */
+}
+  /* Smooth underline transition */
+  .navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Distance below the text */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00bcd4; /* Underline color */
+  transition: width 0.3s ease;
+}
+
+
+  .navbar-nav .nav-link:hover::after {
+  width: 100%; /* Full underline on hover */
+}
+
+
+  /* Active state highlight */
+  .navbar-nav .active .nav-link::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  /* Hover effect for navbar items */
+  .navbar-nav .nav-link:hover {
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.8), 0 0 20px rgba(0, 188, 212, 0.8); /* Neon glow */
+    background-color: rgba(0, 188, 212, 0.1); /* Light blue background */
+    border-radius: 5px;
+  }
+
+  /* Optional: Adjust the navbar toggler */
+  .navbar-toggler {
+    border-color: #00bcd4;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #00bcd4;
+  }
+
+  /* Add more space between navbar items */
+  .navbar-nav {
+    margin-left: 10px; /* Adds space between sections */
+  }
+/* Style for the logo */
+.navbar-brand .logo {
+  height: 40px; /* Adjust the size of the logo */
+  transition: transform 0.3s ease; /* Smooth effect */
+  margin-left: 40px; /* Move the logo to the left */
+}
+
+/* Initially hide the brand name */
+.navbar-brand .brand-name {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Optional: Dark background */
+  color: #fff; /* Text color */
+  padding: 5px 10px; /* Optional: Padding for the name */
+  border-radius: 5px; /* Optional: Rounded edges */
+  font-family: 'Press Start 2P', cursive; /* Pixel font */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Show the brand name and zoom in the logo on hover */
+.navbar-brand:hover .logo {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
+.navbar-brand:hover .brand-name {
+  display: block;
+}
+
+/* Adjust the navbar-brand itself to move everything to the left */
+.navbar-brand {
+  margin-left: 10px; /* Adjust this value as needed */
+}
+.navbar .nav-item .dropdown-toggle::after {
+  display: none;
+}
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        .card-header {
+          background-color: #020303;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+          /* Custom styles for navbar */
+          .navbar-brand {
+            margin-right: 20px; /* Add spacing after "Old Car Price Prediction" */
+        }
+
+        .navbar-collapse {
+            justify-content: flex-end; /* Shift navbar to the right */
+        }
+
+        /* Custom styles for navbar */
+        .navbar {
+            background-color: #007bff;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #0056b3;
+        }
+
+
+        /* Custom style for the contact section */
+        .contact-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            background-color:  #020303;;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .contact-section li {
+            margin-bottom: 10px;
+        }
+
+        .contact-section li strong {
+            color: #007bff;
+        }
+
+        .contact-section a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#" style="font-size: 1.5rem; font-weight: bold; position: relative;">
+        <img src="static/css/images/racing.png" alt="Website Logo" class="logo">
+        <span class="brand-name">Wheely</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/EMI">EMI</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+              {{ current_user.username }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="{{ url_for('profile') }}">Profile</a>
+              <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+<!-- Your content here -->
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Thank you for your interest in Old Car Prediction! We value your feedback, inquiries, and suggestions. Please feel free to reach out to us using any of the following methods:</p>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:contact@oldcarprediction.com">contact@oldcarprediction.com</a></li>
+       
+        <li><strong>Social Media:</strong>
+            <ul>
+                <li><a href="https://www.facebook.com/oldcarprediction">Facebook</a></li>
+                <li><a href="https://twitter.com/oldcarprediction">Twitter</a></li>
+                <li><a href="https://www.instagram.com/oldcarprediction">Instagram</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+</section>
+
+
+
+<!-- Bootstrap JS CDN -->
+<script
+src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"
+></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+crossorigin="anonymous"
+></script>
+</body>
+</html>
+

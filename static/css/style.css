@@ -1,0 +1,61 @@
+/* styles.css */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.card-header {
+    background-color: #00ff6e; /* Changed navbar color */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select,
+input[type="text"],
+.btn-primary {
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+#prediction {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Custom styles for navbar */
+.navbar-brand {
+    margin-right: 20px; /* Add spacing after "Car Price Predictor" */
+}
+
+.navbar-collapse {
+    justify-content: flex-end; /* Shift navbar to the right */
+}
